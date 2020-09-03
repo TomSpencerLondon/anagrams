@@ -9,22 +9,24 @@ public class WordShould {
 
   @Test
   void be_its_own_anagram_if_empty() {
-    Word word = new Word("");
-    List<Word> anagrams = word.getAnagrams();
+    List<Word> anagrams = getAnagrams("");
     then(anagrams).extracting(Word::toString).containsOnly("");
   }
 
   @Test
   void be_its_own_anagram_if_one_letter_long() {
-    Word word = new Word("a");
-    List<Word> anagrams = word.getAnagrams();
+    List<Word> anagrams = getAnagrams("a");
     then(anagrams).extracting(Word::toString).containsOnly("a");
   }
 
   @Test
   void have_itself_and_its_reverse_as_its_only_anagram() {
-    Word word = new Word("ab");
-    List<Word> anagrams = word.getAnagrams();
+    List<Word> anagrams = getAnagrams("ab");
     then(anagrams).extracting(Word::toString).contains("ab", "ba");
+  }
+
+  private List<Word> getAnagrams(String input) {
+    List<Word> anagrams = new Word(input).getAnagrams();
+    return anagrams;
   }
 }
