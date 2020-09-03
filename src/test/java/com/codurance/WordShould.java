@@ -15,9 +15,16 @@ public class WordShould {
   }
 
   @Test
-  void return_word_self_for_one_letter_word() {
+  void be_its_own_anagram_if_one_letter_long() {
     Word word = new Word("a");
     List<Word> anagrams = word.getAnagrams();
     then(anagrams).extracting(Word::toString).containsOnly("a");
+  }
+
+  @Test
+  void have_itself_and_its_reverse_as_its_only_anagram() {
+    Word word = new Word("ab");
+    List<Word> anagrams = word.getAnagrams();
+    then(anagrams).extracting(Word::toString).contains("ab", "ba");
   }
 }

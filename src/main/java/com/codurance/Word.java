@@ -11,7 +11,12 @@ public class Word {
   }
 
   public List<Word> getAnagrams() {
-    return List.of(this);
+    if (input.length() <= 1) {
+      return List.of(this);
+    } else {
+      Word reverseWord = new Word(new StringBuffer(input).reverse().toString());
+      return List.of(this, reverseWord);
+    }
   }
 
   @Override
