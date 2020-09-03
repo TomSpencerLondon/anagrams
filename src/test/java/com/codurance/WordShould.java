@@ -28,16 +28,19 @@ public class WordShould {
     then(anagrams).extracting(Word::toString).containsOnly("ab", "ba");
   }
 
-  @Disabled
   @Test
   void have_six_anagrams_for_three_unique_letters() {
     Collection<Word> anagrams = getAnagrams("abc");
     then(anagrams).extracting(Word::toString)
         .containsOnly(
-            "abc", "acb",
-            "bac", "bca",
-            "cab", "cba"
+            "a" + "bc", "a" + "cb",
+            "b" + "ac", "b" + "ca",
+            "c" + "ab", "c" + "ba"
         );
+  }
+
+  @Test
+  void have_several_for_biro() {
 
   }
 
