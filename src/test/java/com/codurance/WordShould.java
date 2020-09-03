@@ -13,4 +13,11 @@ public class WordShould {
     List<Word> anagrams = word.getAnagrams();
     then(anagrams).extracting(Word::toString).containsOnly("");
   }
+
+  @Test
+  void return_word_self_for_one_letter_word() {
+    Word word = new Word("a");
+    List<Word> anagrams = word.getAnagrams();
+    then(anagrams).extracting(Word::toString).containsOnly("a");
+  }
 }
