@@ -22,7 +22,7 @@ public class WordShould {
   @Test
   void have_itself_and_its_reverse_as_its_only_anagram() {
     List<Word> anagrams = getAnagrams("ab");
-    then(anagrams).extracting(Word::toString).contains("ab", "ba");
+    then(anagrams).extracting(Word::toString).containsOnly("ab", "ba");
   }
 
   private List<Word> getAnagrams(String input) {
