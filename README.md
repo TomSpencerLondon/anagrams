@@ -10,7 +10,7 @@ Collection of characters from a word such as biro:
 ### Test List
 1. ~~Empty word returns empty string~~
 2. ~~1 letter word returns word itself~~
-3. 2 letter word returns word and reverse
+3. ~~2 letter word returns word and reverse~~
 4. 3 letter word returns 6 words if characters are unique:
 * abc acb
 * bac bca

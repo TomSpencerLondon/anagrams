@@ -1,7 +1,7 @@
 package com.codurance;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class Word {
   private final String input;
@@ -10,13 +10,9 @@ public class Word {
     this.input = input;
   }
 
-  public List<Word> getAnagrams() {
-    if (input.length() <= 1) {
-      return List.of(this);
-    } else {
-      Word reverseWord = new Word(new StringBuffer(input).reverse().toString());
-      return List.of(this, reverseWord);
-    }
+  public Set<Word> getAnagrams() {
+    Word reverseWord = new Word(new StringBuffer(input).reverse().toString());
+    return Set.of(this, reverseWord);
   }
 
   @Override
