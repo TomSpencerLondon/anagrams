@@ -26,7 +26,6 @@ public class WordShould {
   }
 
   private List<Word> getAnagrams(String input) {
-    List<Word> anagrams = new Word(input).getAnagrams();
-    return anagrams;
+    return new Word(input).getAnagrams();
   }
 }
